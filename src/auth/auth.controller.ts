@@ -6,7 +6,7 @@ import {
   Post,
   Get,
   UseGuards,
-  Req,
+  Request,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthInput } from './auth.type';
@@ -23,8 +23,8 @@ export class AuthController {
   }
 
   @UseGuards(AuthGuard)
-  @Get('me')
-  getUserInfo(@Req() request) {
-    return request?.user;
+  @Get('profile')
+  getProfile(@Request() req) {
+    return req?.user;
   }
 }
