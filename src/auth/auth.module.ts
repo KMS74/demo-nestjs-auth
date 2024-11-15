@@ -9,7 +9,7 @@ import { JWT_SECRET } from 'src/configs/jwt-secret';
   imports: [
     UsersModule,
     JwtModule.register({
-      global: true,
+      global: true, // Make the module available globally in the app
       secret: JWT_SECRET,
       signOptions: { expiresIn: '1d' },
     }),

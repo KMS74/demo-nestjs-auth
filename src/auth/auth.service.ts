@@ -21,6 +21,7 @@ export class AuthService {
   }
 
   private async validateUser(input: AuthInput): Promise<SignInData | null> {
+    // check if user exists and password matches the input password
     const user = await this.usersService.findOne(input.username);
     if (user && user.password === input.password) {
       return {
