@@ -30,6 +30,7 @@ export class AuthGuard implements CanActivate {
         username: payload.username,
       };
     } catch {
+      // if token is invalid, throw unauthorized exception
       throw new UnauthorizedException();
     }
 
